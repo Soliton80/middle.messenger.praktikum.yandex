@@ -1,83 +1,32 @@
-### Ветка, в которой делаете задания спринта, должна называться sprint_i, где i - номер спринта. Не переименовывайте её.
+This is a learning project completing on the yandex mf course.
 
-### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main. 
-### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).
+Lint to pull_request sprint_1: https://github.com/Soliton80/middle.messenger.praktikum.yandex/pull/1
 
-### Например, задания для проектной работы во втором спринте вы делаете в ветке sprint_2. Открываете из неё pull request в ветку main. Ссылку на этот pr добавляете в README.md в ветке main. После этого на платформе Практикума нажимаете «Проверить задание».
+The project implies a working version of web-messenger frontend working with api.
 
-### Также не забудьте проверить, что репозиторий публичный.
----
+You can see the prototype on [figma](https://www.figma.com/file/8ILHuuVJqjuGU62jaCz49D/mf_messenger?type=design&node-id=0%3A1&mode=design&t=XvZ0MCTizXdJF4js-1)
+
+commands: 
 
 
-Даже законченный проект остаётся только заготовкой, пока им не начнут пользоваться. Но сначала пользователь должен понять, зачем ему пользоваться вашим кодом. В этом помогает файл README.
+`npm run dev` - development launch
 
-README — первое, что прочитает пользователь, когда попадёт в репозиторий на «Гитхабе». Хороший REAMDE отвечает на четыре вопроса:
+`npm run start` - launching a project via bundle build in vite
 
-- Готов ли проект к использованию?
-- В чём его польза?
-- Как установить?
-- Как применять?
+vite automatically launches postcss at build
 
-## Бейджи
+used postcss services: 'autoprefixer'  'PostCSS Preset Env' 'cssnano'
 
-Быстро понять статус проекта помогают бейджи на «Гитхабе». Иногда разработчики ограничиваются парой бейджев, которые сообщат о статусе тестов кода:
+used @vituum/vite-plugin-pug
 
-![Бэйджи](https://github.com/yandex-praktikum/mf.messenger.praktikum.yandex.images/blob/master/mf/b.png)
+The project has CI github configured: build dockercontainer with expressjs - deploy to dockerhub - deploy to private vps - notification of successful deployment by telegramm.
 
-Если пользователь увидит ошибку в работе тестов, то поймёт: использовать текущую версию в важном проекте — не лучшая идея.
+Examples of Accessible Pages
 
-Бейджи помогают похвастаться достижениями: насколько популярен проект, как много разработчиков создавало этот код. Через бейджи можно даже пригласить пользователя в чат:
-
-![Версии](https://github.com/yandex-praktikum/mf.messenger.praktikum.yandex.images/blob/master/mf/vers.png)
-
-В README **Webpack** строка бейджев подробно рассказывает о покрытии кода тестами. Когда проект протестирован, это вызывает доверие пользователя. Последний бейдж приглашает присоединиться к разработке. 
-
-Другая строка убедит пользователя в стабильности инфраструктуры и популярности проекта. Последний бейдж зовёт в чат проекта.
-
-## Описание
-
-Краткое опишите, какую задачу решает проект. Пользователь не верит обещаниям и не готов читать «полотна» текста. Поэтому в описании достаточно нескольких строк:
-
-![Описание](https://github.com/yandex-praktikum/mf.messenger.praktikum.yandex.images/blob/master/mf/desc.png)
-
-Авторы **React** дробят описание на абзацы и списки — так проще пробежаться глазами по тексту и найти ключевую информацию.
-
-Если у проекта есть сайт, добавьте ссылку в заголовок.
-
-## Установка
-
-Лучше всего пользователя убеждает собственный опыт. Чем быстрее он начнёт пользоваться проектом, тем раньше почувствует пользу. Для этого помогите ему установить приложение: напишите краткую пошаговую инструкцию.
-
-Если проект предназначен для разработчиков, добавьте информацию об установке тестовых версий. Например:
-
-- `npm install` — установка стабильной версии,
-- `npm start` — запуск версии для разработчика,
-- `npm run build:prod` — сборка стабильной версии.
-
-## **Примеры использования**
-
-Хорошо, если сразу после установки пользователь сможет решить свои задачи без изучения проекта. Это особенно верно, если ваш пользователь — не профессиональный разработчик. Но даже профессионал поймёт вас лучше, если показать примеры использования:
-
-![Ссылки](https://github.com/yandex-praktikum/mf.messenger.praktikum.yandex.images/blob/master/mf/link.png)
-
-Для более подробных инструкции добавьте новые разделы или ссылки:
-
-- на документацию,
-- вики проекта,
-- описание API.
-
-В учебном проекте будут полезен раздел с описанием стиля кода и правилами разработки: как работать с ветками, пул-реквестами и релизами.
-
-### **Команда**
-
-Если вы работаете в команде, укажите основных участников: им будет приятно, а новые разработчики охотнее присоединятся к проекту. «Гитхаб» — не просто инструмент, это социальная сеть разработчиков.
-
-![Команда](https://github.com/yandex-praktikum/mf.messenger.praktikum.yandex.images/blob/master/mf/team.png)
-
-### **Примеры README**
-
-- «[Реакт](https://github.com/facebook/react)»,
-- «[Эхо](https://github.com/labstack/echo)»,
-- «[Вебпак](https://github.com/webpack/webpack)»,
-- «[ТДенгине](https://github.com/taosdata/TDengine)»,
-- «[Соул-хантинг](https://github.com/vladpereskokov/soul-hunting/)».
+messenger.sukharev.ru
+messenger.sukharev.ru/404
+messenger.sukharev.ru/500
+messenger.sukharev.ru/chats
+messenger.sukharev.ru/message
+messenger.sukharev.ru/signup
+messenger.sukharev.ru/user_profile
