@@ -17,5 +17,5 @@ export default ({
     build: {
         outDir: 'public/dist',
     },
-    
+
 });
