@@ -1,0 +1,41 @@
+.chat {
+  display: flex;
+  height: 88px;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.chat:first-child {
+  border-top: 1px solid var(--light-color);
+}
+
+.chat-image {
+  flex: 0 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-message {
+
+  flex-grow: 1;
+
+}
+
+.chat-info {
+    flex: 0 0 30px;
+}
+
+.unread-messeges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/src/assets/circle.svg');
+  background-size: cover;
+  height: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 15px;
+  color: var(--white-color);
+}

@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #FF9000;
+    --light-color: #999999;
+    --dark-color: #000000;
+    --white-color: #FFFFFF;
+    --red-color: #b52323;
+    --backstage-color: #F8F8F8;
+    --backstage-color-responce: #E4EDFD;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    margin: 0;
+}
+
+input,
+textarea,
+button,
+select {
+    font: inherit;
+}
+
+.ax-button {
+    all: unset;
+    outline: revert;
+    box-sizing: border-box;
+}
+
+ul, ul li {
+  all: unset;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal; 
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 30px;
+    padding: 0;
+    border-top: 1px solid var(--light-color);
+}
+
