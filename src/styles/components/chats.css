@@ -16,20 +16,18 @@
 }
 
 .chat-message {
-
   flex-grow: 1;
-
 }
 
 .chat-info {
-    flex: 0 0 30px;
+  flex: 0 0 30px;
 }
 
 .unread-messeges {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/src/assets/circle.svg');
+  background-image: url("/src/assets/circle.svg");
   background-size: cover;
   height: 30px;
   font-style: normal;

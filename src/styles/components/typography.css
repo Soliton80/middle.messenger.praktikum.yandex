@@ -1,5 +1,5 @@
 .title--lg {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .header {
@@ -9,65 +9,65 @@
 }
 
 .title {
-    font-size: 1.12rem;
-    font-weight: 500;
-    letter-spacing: 0.018rem;
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: 0.018rem;
 }
 
 .text--dimmed {
-    color: var(--light-text-color);
-    font-size: 0.87rem;
+  color: var(--light-text-color);
+  font-size: 0.87rem;
 }
 
 .sign-nm {
-    color: var(--red-color);
-    font-size: 0.5rem;
-    font-weight: 300;
-    margin-top: -9px;
+  color: var(--red-color);
+  font-size: 0.5rem;
+  font-weight: 300;
+  margin-top: -9px;
 }
 
 .sign-link,
 .sign-link-red,
 .sign-link-light {
-    color: var(--primary-color);
-    font-size: 0.81rem;
-    font-weight: 500;
-    margin-top: 30px;
-    text-align: center;
+  color: var(--primary-color);
+  font-size: 0.81rem;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .sign-link-red {
-    color: var(--red-color);
+  color: var(--red-color);
 }
 
 .sign-link-light {
-    color: var(--light-color);
+  color: var(--light-color);
 }
 
 .chats-name {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.81rem;
-    line-height: 13px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.81rem;
+  line-height: 13px;
 }
 
 .chats-text {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 0.94rem;
-    color: var(--light-color);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.94rem;
+  color: var(--light-color);
 }
 
 .chats-time,
 .chats-time-right {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.56rem;
-    line-height: 0.81rem;
-    color: var(--light-color);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.56rem;
+  line-height: 0.81rem;
+  color: var(--light-color);
 }
 
 .chats-time-right {
-    text-align: right
+  text-align: right;
 }

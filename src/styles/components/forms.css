@@ -9,19 +9,18 @@
   justify-content: space-between;
 }
 
-
-
 .input-label {
   margin-top: 14px;
   color: var(--light-color);
   font-size: 0.56rem;
 }
 
-.input-text, .profile-input-text {
+.input-text,
+.profile-input-text {
   width: 100%;
   background-color: transparent;
   border: none;
-  
+
   font-size: 0.8rem;
   color: var(--text-color);
   margin-bottom: 9px;
@@ -55,7 +54,6 @@
 .input-text:focus {
   outline: none;
 }
-
 
 .form-group {
   display: flex;
