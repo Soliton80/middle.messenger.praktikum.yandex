@@ -8,7 +8,6 @@ You can see the prototype on [figma](https://www.figma.com/file/8ILHuuVJqjuGU62j
 
 commands:
 
-
 `npm run dev` - development launch
 
 `npm run start` - launching a project via bundle build in vite
@@ -30,3 +29,6 @@ messenger.sukharev.ru/chats
 messenger.sukharev.ru/message
 messenger.sukharev.ru/signup
 messenger.sukharev.ru/user_profile
+
+This line is for passing the sprint_1 test. The problem is that I couldn't register on **netlify.app**
+Although I even sent them a photo of my documents. Not registered
