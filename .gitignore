@@ -25,3 +25,4 @@ dist-ssr
 send_secrets.sh
 sprint*
 utils
+node_build*
