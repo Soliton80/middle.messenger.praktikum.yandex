@@ -1,5 +1,5 @@
 .sr-only,
-.sr-only-focusable:not(:focus):not(:focus-within) {
+.sr-only-focusable:not(:focus, :focus-within) {
   position: absolute;
   width: 1px;
   height: 1px;

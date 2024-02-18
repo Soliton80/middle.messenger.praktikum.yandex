@@ -2,7 +2,7 @@
   border-radius: 10px;
   width: 80%;
   background-color: var(--backstage-color);
-  padding: 5px 5px;
+  padding: 5px;
   margin-bottom: 20px;
 }
 
@@ -10,7 +10,7 @@
   border-radius: 10px;
   width: 80%;
   background-color: var(--backstage-color-responce);
-  padding: 5px 5px;
+  padding: 5px;
   margin-left: auto;
 }
 

@@ -1,10 +1,10 @@
 .login-container {
   border-radius: 12px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   display: flex;
   margin-top: 55px;
   flex-direction: column;
-  padding: 78px 31px 36px 31px;
+  padding: 78px 31px 36px;
   height: 689px;
   justify-content: space-between;
 }
@@ -20,7 +20,6 @@
   width: 100%;
   background-color: transparent;
   border: none;
-
   font-size: 0.8rem;
   color: var(--text-color);
   margin-bottom: 9px;
@@ -28,12 +27,12 @@
 
 .input-text {
   border-bottom: 1px solid var(--primary-color);
-  padding: 7px 0px;
+  padding: 7px 0;
 }
 
 .profile-input-text {
   border-bottom: 1px solid var(--light-color);
-  padding: 18px 0px;
+  padding: 18px 0;
 }
 
 .right-aligned-placeholder::placeholder {
@@ -41,9 +40,7 @@
   padding-right: 15px;
 }
 
-.form-group:last-child .profile-input-text {
-  border-bottom: none;
-}
+
 
 .password-mask {
   color: var(--red-color);
@@ -53,6 +50,10 @@
 .profile-input-text:focus,
 .input-text:focus {
   outline: none;
+}
+
+.form-group:last-child .profile-input-text {
+  border-bottom: none;
 }
 
 .form-group {

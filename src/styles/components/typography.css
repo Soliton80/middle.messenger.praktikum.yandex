@@ -1,4 +1,4 @@
-.title--lg {
+.title-lg {
   font-size: 1.25rem;
 }
 
@@ -14,7 +14,7 @@
   letter-spacing: 0.018rem;
 }
 
-.text--dimmed {
+.text-dimmed {
   color: var(--light-text-color);
   font-size: 0.87rem;
 }
