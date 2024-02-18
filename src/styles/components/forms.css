@@ -1,0 +1,70 @@
+.login-container {
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  margin-top: 55px;
+  flex-direction: column;
+  padding: 78px 31px 36px 31px;
+  height: 689px;
+  justify-content: space-between;
+}
+
+.input-label {
+  margin-top: 14px;
+  color: var(--light-color);
+  font-size: 0.56rem;
+}
+
+.input-text,
+.profile-input-text {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-bottom: 9px;
+}
+
+.input-text {
+  border-bottom: 1px solid var(--primary-color);
+  padding: 7px 0px;
+}
+
+.profile-input-text {
+  border-bottom: 1px solid var(--light-color);
+  padding: 18px 0px;
+}
+
+.right-aligned-placeholder::placeholder {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.form-group:last-child .profile-input-text {
+  border-bottom: none;
+}
+
+.password-mask {
+  color: var(--red-color);
+}
+
+.message-placeholder:focus,
+.profile-input-text:focus,
+.input-text:focus {
+  outline: none;
+}
+
+.form-group {
+  display: flex;
+}
+
+#chat-input {
+  width: 100%;
+  background-color: #efefef;
+  border: none;
+  text-align: center;
+  margin-bottom: 18px;
+  height: 40px;
+  margin-top: 18px;
+}

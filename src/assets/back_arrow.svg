@@ -1,0 +1,6 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="12" transform="rotate(-180 12 12)" fill="#FF9000" />
+                <rect x="17.1428" y="12.6858" width="9.42857" height="1.37143" transform="rotate(-180 17.1428 12.6858)"
+                    fill="white" />
+                <path d="M11.1428 16.2857L7.71425 12L11.1428 7.71428" stroke="white" stroke-width="1.6" />
+            </svg>

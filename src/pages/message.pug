@@ -1,0 +1,44 @@
+extends /layouts/main.pug
+block var
+  - var title = 'messenger | message'
+  - var description = 'Trali_vali'
+block content
+  .work-area
+    .left-bar
+      a(href="#")
+        img(src="/src/assets/back_arrow.svg" alt="Back Arrow")
+    .flex-column-100width
+      .flex-top-bottom
+        .flex-space-between
+          .flex-align-center
+            p#header-p-margin
+              img(src="/src/assets/user-circle.svg" alt="User Circle")
+            p.chats-name Vanya
+          div
+            p
+              img(src="/src/assets/vertical_dots.svg" alt="Vertical Dots")
+      .flex-grow
+        .message
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Molestiae, nihil nobis eos nisi quisquam ea exercitationem
+            | similique porro deleniti veniam at ratione culpa animi distinctio
+            | commodi neque delectus nesciunt natus! Lorem ipsum dolor sit amet
+            | consectetur, adipisicing elit. Blanditiis quasi mollitia, modi
+            | voluptatum velit reiciendis illum totam provident suscipit ex
+            | laborum consectetur esse fuga, soluta cum culpa ab sit laboriosam.
+          p.chats-time-right(data-time="11:56") 11:56
+        .message-reply
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Molestiae, nihil nobis eos nisi quisquam ea
+            | exercitationemlanditiis quasi mollitia, modi voluptatum velit
+            | reiciendis illum totam provident suscipit ex laborum consectetur
+            | esse fuga, soluta cum culpa ab sit laboriosam.
+          p.chats-time-right(data-time="11:56") 11:56
+      .flex-top-bottom
+        form.flex-space-between
+          img(src="/src/assets/clip.svg" alt="Clip image")
+          input(type="text" placeholder="message" class="message-placeholder")
+          button(type="submit" class="ax-button")
+            img(src="/src/assets/forward_arrow.svg" alt="Forward Arrow")
