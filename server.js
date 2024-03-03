@@ -1,7 +1,8 @@
 import express from 'express';
 import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-const __filename = require.main.filename;
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
