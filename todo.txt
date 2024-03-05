@@ -1,0 +1,2 @@
+1) change fields css (gen)
+2) bring pages to unified design (figma)

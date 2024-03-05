@@ -1,0 +1,29 @@
+extends ../index.pug
+
+block content
+  .user-profile
+    .user-profile__back
+      button.user-profile__btn-back
+        span.user-profile__btn-back-text назад
+        span.user-profile__btn-back-icon
+          <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="5.19995" width="11" height="1.6" fill="white"/>
+            <path d="M7 1L11 6L7 11" stroke="white" stroke-width="1.6"/>
+          </svg>
+
+    .user-profile__content
+      .user-profile__avatar
+        | !{profileAvatar}
+      span.user-profile__name !{nickname}
+      .user-profile__form
+      
+      //- if true
+      //-   include ../../modules/profileInfo/index.pug
+      
+      else if editProfile
+        | !{formProfile}
+
+      else if changePassword
+        | !{formChangePassword}
+
+  include ../../modules/uploadAvatar/index.pug

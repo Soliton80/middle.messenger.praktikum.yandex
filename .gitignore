@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 send_secrets.sh
 sprint*
-utils
 node_build*

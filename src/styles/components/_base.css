@@ -50,3 +50,12 @@ hr {
   padding: 0;
   border-top: 1px solid var(--light-color);
 }
+
+/* temporarily */
+
+.main-test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

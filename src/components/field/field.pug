@@ -1,0 +1,10 @@
+div
+  label.input-label(for=label)= label
+  input(
+    class=classInput ? classInput : 'input-text'
+    type=type ? type : 'text'
+    autocomplete=autocomplete ? autocomplete : null
+    value=value ? args.value : null
+    placeholder=placeholder ? placeholder : label 
+    id=id ? id : label
+  )

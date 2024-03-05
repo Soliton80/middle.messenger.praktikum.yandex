@@ -14,7 +14,4 @@ export default {
     postcss: 'postcss.config.cjs',
   },
 
-  // build: {
-  //   outDir: 'public/dist',
-  // },
 };

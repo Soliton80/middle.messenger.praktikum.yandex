@@ -1,0 +1,10 @@
+extends ../../components/form/form.pug
+
+block content
+  div 
+    h1.header.title--lg !{title}
+    each field in fields
+          | !{field}
+  .flex-column
+    | !{button}
+    a(href="#").sign-link !{textLink}
