@@ -10,6 +10,8 @@ type Props = {
   autocomplete?: string;
   placeholder?: string;
   classInput?: string;
+  classDiv?: string;
+  classLabel?: string;
   events?: {
     blur: () => void;
     focus: () => void;

@@ -14,15 +14,6 @@
 
 
 
-.profile-input-text {
-  border-bottom: 1px solid var(--light-color);
-  padding: 18px 0;
-}
-
-.right-aligned-placeholder::placeholder {
-  text-align: right;
-  padding-right: 15px;
-}
 
 
 
@@ -40,9 +31,7 @@
   border-bottom: none;
 }
 
-.form-group {
-  display: flex;
-}
+
 
 #chat-input {
   width: 100%;

@@ -6,10 +6,16 @@
 @import url('components/layouts.css') layer(component);
 @import url('components/forms.css') layer(component);
 @import url('components/avatar.css') layer(component);
-@import url('components/chats.css') layer(component);
 @import url('components/message.css') layer(component);
 
 
 @import url('../components/button/button.css');
 @import url('../components/field/field.css');
 @import url('../components/form/form.css');
+@import url('../components/profileAvatar/profile_avatar.css');
+@import url('../components/title/title.css');
+@import url('../components/chatItem/chat_item.css');
+
+@import url('../modules/user_profile_modul/user_profile_modul.css');
+@import url('../modules/chat_module/chat_module.css');
+

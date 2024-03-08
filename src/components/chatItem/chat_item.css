@@ -1,6 +1,6 @@
 .chat {
   display: flex;
-  height: 88px;
+  height: 70px;
   border-bottom: 1px solid var(--light-color);
 }
 
@@ -34,6 +34,6 @@
   font-weight: 500;
   font-size: 11px;
   line-height: 12px;
-  margin-top: 15px;
+  margin-top: 10px;
   color: var(--white-color);
 }

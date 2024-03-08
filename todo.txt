@@ -1,2 +1,4 @@
 1) change fields css (gen)
 2) bring pages to unified design (figma)
+3) forward titles
+4) * cant pass parent class props 

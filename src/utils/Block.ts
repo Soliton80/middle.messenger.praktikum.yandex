@@ -1,7 +1,7 @@
 import { EventBus } from "./EventBus";
 import { v4 as uuidv4 } from 'uuid';
 
-class Block {
+export default class Block {
   static EVENTS = {
     INIT: "init",
     FLOW_CDM: "flow:component-did-mount",
@@ -92,7 +92,7 @@ class Block {
         self.eventBus().emit(Block.EVENTS.FLOW_CDU, {...target}, target);
         return true;
       },
-      deleteProperty() { throw new Error("Нет доступа"); }
+      deleteProperty() { throw new Error("no access"); }
     });
   }
 
@@ -151,4 +151,3 @@ class Block {
   hide() { this.getContent().style.display = "none"; }
 }
 
-export { Block as default }

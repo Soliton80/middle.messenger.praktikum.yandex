@@ -1,4 +1,4 @@
 declare module "*.pug" {
-  const content: (context: any) => string;
+  const content: any;
   export default content;
 }

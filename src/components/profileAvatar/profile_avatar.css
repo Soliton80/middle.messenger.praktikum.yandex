@@ -1,9 +1,11 @@
 .profile-avatar {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-avatar__button {

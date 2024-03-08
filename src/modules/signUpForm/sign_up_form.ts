@@ -1,5 +1,6 @@
 import Block from '../../utils/Block';
 import Button from '../../components/button/button';
+import Title from "../../components/title/title";
 import Field from '../../components/field/field';
 import sign_up_form from './sign_up_form.pug';
 
@@ -8,11 +9,13 @@ type Props = {
 }
 
 export default class SignupForm extends Block {
-  constructor(props: Props) {
+  constructor(props?: Props) {
     super(props);
   }
 
   protected initChildren(): void {
+
+    this.children.title = new Title({ title: 'Sign Up' })
 
     this.children.fields = [
       { label: 'email', autocomplete: 'email', placeholder: "kirill@sukharev.ru" },

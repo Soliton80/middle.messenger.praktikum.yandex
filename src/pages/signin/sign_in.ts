@@ -1,6 +1,6 @@
 import Block from "../../utils/Block";
 import SigninForm from "../../modules/signInForm/sign_in_form";
-import template from './sign_in.pug'
+import sign_in from './sign_in.pug'
 
 export class SignIn extends Block {
 
@@ -9,10 +9,10 @@ export class SignIn extends Block {
   }
 
   protected initChildren(): void {
-    this.children.SignIn = new SigninForm({ title: 'Sign In', textLink: 'Sign Up' });
+    this.children.SignIn = new SigninForm({textLink: 'Sign Up' });
   }
 
   render() {
-    return this.compile(template, {})
+    return this.compile(sign_in, {})
   }
 }

@@ -1,0 +1,29 @@
+.form-group {
+  display: flex;
+}
+
+.profile-input-text {
+  border-bottom: 1px solid var(--light-color);
+  padding: 10px 0;
+}
+
+.right-aligned-placeholder::placeholder {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.margin-container > * {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.sign-link,
+.sign-link-red {
+  color: var(--primary-color);
+  font-size: 0.81rem;
+  font-weight: 500;
+}
+
+.sign-link-red {
+  color: var(--red-color);
+}

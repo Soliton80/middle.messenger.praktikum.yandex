@@ -1,5 +1,8 @@
-div
-  label.input-label(for=label)= label
+div(class=classDiv ? classDiv : null)
+  label(
+    class=classLabel ? classLabel: 'input-label'
+    for=label
+  )= label
   input(
     class=classInput ? classInput : 'input-text'
     type=type ? type : 'text'

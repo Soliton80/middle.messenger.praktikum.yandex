@@ -1,5 +1,5 @@
 import Block from '../../utils/Block'
-import template from './template.pug';
+import profile_avatar from './profile_avatar.pug';
 
 type Props = {
   avatar: string;
@@ -11,6 +11,6 @@ export default class ProfileAvatar extends Block {
   }
   
   render() {
-    return this.compile(template, {...this.props});
+    return this.compile(profile_avatar, {...this.props});
   }
 }

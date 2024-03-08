@@ -20,20 +20,6 @@
   margin-top: -9px;
 }
 
-.sign-link,
-.sign-link-red,
-.sign-link-light {
-  color: var(--primary-color);
-  font-size: 0.81rem;
-  font-weight: 500;
-  margin-top: 30px;
-  text-align: center;
-}
-
-.sign-link-red {
-  color: var(--red-color);
-}
-
 .sign-link-light {
   color: var(--light-color);
 }
