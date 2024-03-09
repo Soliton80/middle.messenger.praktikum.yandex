@@ -1,0 +1,8 @@
+.message-placeholder {
+  width: 100%;
+  background-color: #efefef;
+  border-radius: 30px;
+  height: 24px;
+  padding-left: 10px;
+  border: none;
+}

@@ -1,6 +1,4 @@
 import Block from '../../utils/Block'
-// import FormChangePassword from '../../modules/formChangePassword'
-// import ProfileForm from '../../modules/profileForm'
 import ProfileAvatar from '../../components/profileAvatar/profile_avatar'
 import Title from '../../components/title/title';
 import Field from '../../components/field/field';

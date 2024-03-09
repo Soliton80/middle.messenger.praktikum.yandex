@@ -12,12 +12,12 @@
   background-color: var(--backstage-color-responce);
   padding: 5px;
   margin-left: auto;
+  margin-bottom: 20px;
 }
 
 .message-placeholder {
   width: 100%;
   background-color: #efefef;
-  border: none;
   border-radius: 30px;
   height: 24px;
   padding-left: 10px;

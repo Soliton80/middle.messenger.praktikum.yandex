@@ -5,3 +5,26 @@ block content
   .left-bar
     a(href="#")
         img(src="/src/assets/back_arrow.svg" alt="Back Arrow")
+  
+  .flex-column-100width
+      .flex-top-bottom
+        .flex-space-between
+          .flex-align-center
+            p#header-p-margin
+              img(src="/src/assets/user-circle.svg" alt="User Circle")
+            p.chats-name Vanya
+          div
+            p
+              img(src="/src/assets/vertical_dots.svg" alt="Vertical Dots")
+      .flex-grow
+        each message in messagesList
+          |!{message}
+      .flex-top-bottom
+        form.flex-space-between
+          img(src="/src/assets/clip.svg" alt="Clip image")
+          input(type="text" placeholder="message" class="message-placeholder")
+          button(type="submit" class="ax-button")
+            img(src="/src/assets/forward_arrow.svg" alt="Forward Arrow")
+
+
+        

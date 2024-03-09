@@ -6,8 +6,20 @@
 }
 
 .input-text {
+  border: none;
+  color: var(--text-color);
   border-bottom: 1px solid var(--primary-color);
   padding: 7px 0;
+  
 }
 
+.password-mask {
+  color: var(--red-color);
+}
+
+.message-placeholder:focus,
+.profile-input-text:focus,
+.input-text:focus {
+  outline: none;
+}
 

@@ -1,7 +1,7 @@
-class EventBus {
-  protected listeners: Record<string, (() => void)[]> = {}
+export class EventBus {
+  protected listeners: Record<string, ((oldProps: any, newProps: any) => void)[]> = {}
   
-  on(event: string, callback: ()=>void) {
+  on(event: string, callback: (oldProps: any, newProps: any) => void) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
@@ -9,7 +9,7 @@ class EventBus {
     this.listeners[event].push(callback);
   }
 
-  off(event: string, callback: () => void) {
+  off(event: string, callback: (oldProps: any, newProps: any) => void) {
     if (!this.listeners[event]) {
       return;
     }
@@ -19,15 +19,13 @@ class EventBus {
     })
   }
 
-  emit(event: string): void {
+  emit(event: string, oldProps: any, newProps: any): void {
     if (!this.listeners[event].length) {
       return;
     }
 
     this.listeners[event].forEach(listener => {
-      listener()
+      listener(oldProps, newProps)
     });
   }
 }
-
-export { EventBus };

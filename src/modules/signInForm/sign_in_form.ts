@@ -17,8 +17,8 @@ export default class SigninForm extends Block {
     this.children.title = new Title({ title: 'Sign In' })
     this.children.fields = [
       { label: 'login', autocomplete: 'name', placeholder: "Vanya" },
-      { label: 'password', autocomplete: 'current-password', type: 'password' },
-    ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder }))
+      { label: 'password', autocomplete: 'current-password', type: 'password', classInput: 'input-text password-mask'},
+    ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder, classInput: field.classInput}))
 
     this.children.button = new Button({ label: 'Sign In' })
   }

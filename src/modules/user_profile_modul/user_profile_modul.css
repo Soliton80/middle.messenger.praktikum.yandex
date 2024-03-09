@@ -2,7 +2,20 @@
   display: flex;
 }
 
+.input-text,
 .profile-input-text {
+  width: 100%;
+  background-color: transparent;
+  font-size: 0.8rem;
+  margin-bottom: 9px;
+}
+
+.form-group:last-child .profile-input-text {
+  border-bottom: none;
+}
+
+.profile-input-text {
+  border: none;
   border-bottom: 1px solid var(--light-color);
   padding: 10px 0;
 }
@@ -22,6 +35,8 @@
   color: var(--primary-color);
   font-size: 0.81rem;
   font-weight: 500;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .sign-link-red {

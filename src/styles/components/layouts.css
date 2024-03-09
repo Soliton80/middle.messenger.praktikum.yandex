@@ -7,18 +7,15 @@
   display: flex;
 }
 
-
-
-
-
 .left-bar {
   background-color: #fbfbfb;
   width: 46px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100%; */
-}
+  border-top-left-radius: 12px; 
+  border-bottom-left-radius: 12px; 
+  }
 
 .flex-align-center {
   display: flex;
@@ -29,6 +26,8 @@
 .flex-column-grow-space-between {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .flex-column-grow-space-between {
@@ -45,6 +44,7 @@
 
 .flex-grow {
   flex-grow: 1;
+  padding: 10px;
 }
 
 .flex-center {

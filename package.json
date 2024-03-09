@@ -13,6 +13,7 @@
     "css:build": "postcss components/test.css --config postcss.config.cjs -o dist/assets/style.css"
   },
   "devDependencies": {
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@vituum/vite-plugin-pug": "^1.1.0",
     "autoprefixer": "^10.4.17",

@@ -1,21 +1,20 @@
-@layer base, component, page;
+@layer base, component, module;
 
 @import url('components/_base.css') layer(base);
 @import url('components/helpers.css') layer(component);
-@import url('components/typography.css') layer(component);
 @import url('components/layouts.css') layer(component);
-@import url('components/forms.css') layer(component);
-@import url('components/avatar.css') layer(component);
-@import url('components/message.css') layer(component);
 
+@import url('../components/button/button.css') layer(component);
+@import url('../components/field/field.css') layer(component);
+@import url('../components/form/form.css') layer(component);
+@import url('../components/profileAvatar/profile_avatar.css') layer(component);
+@import url('../components/title/title.css') layer(component);
+@import url('../components/chatItem/chat_item.css') layer(component);
+@import url('../components/messageItem/message_item .css') layer(component);
+@import url('../components/search_field/search_field.css') layer(component);
 
-@import url('../components/button/button.css');
-@import url('../components/field/field.css');
-@import url('../components/form/form.css');
-@import url('../components/profileAvatar/profile_avatar.css');
-@import url('../components/title/title.css');
-@import url('../components/chatItem/chat_item.css');
+@import url('../modules/user_profile_modul/user_profile_modul.css') layer(module);
+@import url('../modules/chat_module/chat_module.css') layer(module);
+@import url('../modules/message_module/message_module.css') layer(module);
 
-@import url('../modules/user_profile_modul/user_profile_modul.css');
-@import url('../modules/chat_module/chat_module.css');
 

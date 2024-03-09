@@ -8,3 +8,36 @@
   font-size: 0.81rem;
   font-weight: 500;
 }
+
+
+.chats-name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.81rem;
+  line-height: 13px;
+}
+
+.chats-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.94rem;
+  color: var(--light-color);
+}
+
+.chats-time,
+.chats-time-right {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.56rem;
+  line-height: 0.81rem;
+  color: var(--light-color);
+}
+
+.chats-time-right {
+  text-align: right;
+}
+
+.sign-link-light {
+  color: var(--light-color);
+}

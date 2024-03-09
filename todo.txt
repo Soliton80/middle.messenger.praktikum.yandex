@@ -2,3 +2,5 @@
 2) bring pages to unified design (figma)
 3) forward titles
 4) * cant pass parent class props 
+5) make consistent layout form component
+6) DOMContentLoaded time > 4s

@@ -23,9 +23,9 @@ export default class SignupForm extends Block {
       { label: 'first_name', autocomplete: 'name', placeholder: "Vanya" },
       { label: 'second_name', autocomplete: 'family-name', placeholder: "Ivanov" },
       { label: 'phone', autocomplete: 'tel', placeholder: "+7 (777) 777 77 77" },
-      { label: 'password', autocomplete: 'current-password', type: 'password' },
-      { label: 'repeat password', autocomplete: 'current-password', type: 'password' },
-    ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder }))
+      { label: 'password', autocomplete: 'current-password', type: 'password', classInput: 'input-text password-mask' },
+      { label: 'repeat password', autocomplete: 'current-password', type: 'password', classInput: 'input-text password-mask'},
+    ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder, classInput: field.classInput }))
 
     this.children.button = new Button({ label: 'Sign Up' })
   }
