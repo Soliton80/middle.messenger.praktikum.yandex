@@ -3,11 +3,6 @@ import SigninForm from "../../modules/signInForm/sign_in_form";
 import sign_in from './sign_in.pug'
 
 
-type Props = {
-  title: string;
-  description: string;
-};
-
 
 export class SignIn extends Block {
 
@@ -20,6 +15,6 @@ export class SignIn extends Block {
   }
 
   render() {
-    return this.compile(sign_in, {title: 'Sign In!!!!!!!!!!!', })
+    return this.compile(sign_in, {});
   }
 }

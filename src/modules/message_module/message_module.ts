@@ -1,7 +1,5 @@
 import Block from '../../utils/Block'
 import MessageItem from '../../components/messageItem/message_item';
-import ProfileAvatar from '../../components/profileAvatar/profile_avatar'
-import Title from '../../components/title/title';
 import message_module from './message_module.pug';
 
 type Props = {

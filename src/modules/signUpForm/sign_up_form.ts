@@ -28,6 +28,22 @@ export default class SignupForm extends Block {
     ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder, classInput: field.classInput }))
 
     this.children.button = new Button({ label: 'Sign Up' })
+
+    if (this.children.button.element !== null) {
+      this.children.button.element.addEventListener('click', () => {
+        if (Array.isArray(this.children.fields)) {
+          this.children.fields.forEach((field: Block) => {
+            if (field instanceof Field && field.element !== null) {
+              const inputElement = field.element.querySelector('input');
+              if (inputElement !== null) {
+                console.log(inputElement.value);
+              }
+            }
+          });
+        }
+      });
+    }
+    
   }
 
   render() {

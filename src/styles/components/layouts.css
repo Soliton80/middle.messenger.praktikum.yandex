@@ -53,6 +53,11 @@
   height: 100vh;
 }
 
+.flex-100width {
+  display: flex;
+  width: 100%;
+}
+
 .flex-column-100width {
   width: 100%;
 }

@@ -1,6 +1,4 @@
 import Block from '../../utils/Block'
-// import FormChangePassword from '../../modules/formChangePassword'
-// import ProfileForm from '../../modules/profileForm'
 import Profile from '../../modules/user_profile_modul/user_profile_modul'
 import user_profile from './user_profile.pug';
 

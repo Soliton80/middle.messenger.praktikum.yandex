@@ -1,23 +1,20 @@
-extends ../../pages/index_test.pug
-
 
 block content
-  .left-bar
-    a(href="#")
-        img(src="/src/assets/back_arrow.svg" alt="Back Arrow")
-  .flex-column-grow-space-between
-    .margin-container
-      | !{profileAvatar}
-      | !{title}
-    div
-      form
-        each field in fields
-          |!{field}
-    div(style="margin-bottom: 20px") 
-      a.sign-link(href="#") save profile changes
-      hr
-      a.sign-link(href="#") change password
-      hr
-      a.sign-link-red(href="/") check out
-    
-    
+  .flex-100width
+    .left-bar
+      a(href="#")
+          img(src="/src/assets/back_arrow.svg" alt="Back Arrow")
+    .flex-column-grow-space-between
+      .margin-container
+        | !{profileAvatar}
+        | !{title}
+      div
+        form
+          each field in fields
+            |!{field}
+      div(style="margin-bottom: 20px") 
+        a.sign-link(href="#") save profile changes
+        hr
+        a.sign-link(href="#") change password
+        hr
+        a.sign-link-red(href="/") check out
