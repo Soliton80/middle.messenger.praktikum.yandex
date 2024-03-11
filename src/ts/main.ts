@@ -8,7 +8,7 @@ import { Message } from '../pages/message/message';
 import { renderDOM } from '../utils/renderDOM';
 
 window.addEventListener('DOMContentLoaded', () => {
-  const page = new Message();
+  const page = new SignIn();
 
   renderDOM('main', page);
 });
