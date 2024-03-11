@@ -1,6 +1,9 @@
-button.ax-button.sign-button(
+button.ax-button(
   type=type ? type : 'button'
-  class=classes ? classes : ''
-)= label
+  class=classes ? classes : 'sign-button'
+)
+  if imageSrc
+    img(src=imageSrc alt=imageAlt)
+  = label
 
 

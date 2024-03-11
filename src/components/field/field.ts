@@ -23,6 +23,10 @@ export default class Field extends Block {
   constructor(props: Props) {
     super(props);
   }
+  
+  public getLabel(): string {
+    return this.props.label;
+  }
 
   render() {
     return this.compile(field, { ...this.props });

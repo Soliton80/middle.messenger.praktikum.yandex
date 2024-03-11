@@ -3,6 +3,11 @@ import Button from "../../components/button/button";
 import Field from "../../components/field/field";
 import Title from "../../components/title/title";
 import sign_in_form from "./sign_in_form.pug";
+import {
+  setValidator,
+  validateLogin,
+  validatePassword,
+} from "../../utils/validators";
 
 type Props = {
   textLink: string,
@@ -22,6 +27,23 @@ export default class SigninForm extends Block {
 
     this.children.button = new Button({ label: 'Sign In' })
 
+    if (Array.isArray(this.children.fields)) {
+      this.children.fields.forEach((field: Block) => {
+        if (field instanceof Field && field.element !== null) {
+          const inputElement = field.element.querySelector('input');
+          if (inputElement !== null) {
+            inputElement.addEventListener('blur', () => {
+              if (field.getLabel() === 'login') {
+                setValidator(inputElement, validateLogin);
+              } else if (field.getLabel() === 'password') {
+                setValidator(inputElement, validatePassword);
+              }
+            });
+          }
+        }
+      });
+    }
+
     if (this.children.button.element !== null) {
       this.children.button.element.addEventListener('click', () => {
         if (Array.isArray(this.children.fields)) {
@@ -36,7 +58,6 @@ export default class SigninForm extends Block {
         }
       });
     }
-
   }
 
   render() {

@@ -1,11 +1,12 @@
 import Block from '../../utils/Block'
 import MessageItem from '../../components/messageItem/message_item';
+import Field from '../../components/field/field';
+import Button from '../../components/button/button';
 import message_module from './message_module.pug';
-
-type Props = {
-  nickname: string
-  title: string
-}
+import {
+  setValidator,
+  validateMessage
+} from "../../utils/validators";
 
 
 export default class MessageModule extends Block {
@@ -38,8 +39,41 @@ export default class MessageModule extends Block {
       time: message.time,
     }))
 
-  }
+    this.children.messageInput = new Field({
+      label: 'message', autocomplete: 'off',
+      placeholder: "Type your message here...",
+      classInput: 'message-placeholder',
+      classLabel: 'label-invisible'
+    });
+    
+    this.children.submitButton = new Button({
+      classes: 'd',
+      type: 'submit',
+      imageSrc:  "/src/assets/forward_arrow.svg",
+      imageAlt: "Forward Arrow" 
+    });
 
+    if (this.children.messageInput.element !== null) {
+      const inputElement = this.children.messageInput.element.querySelector('input');
+      if (inputElement !== null) {
+        inputElement.addEventListener('blur', () => {
+          setValidator(inputElement, validateMessage);
+        });
+      }
+    }
+
+    if (this.children.submitButton?.element !== null) {
+      this.children.submitButton.element.addEventListener('click', () => {
+        if (this.children.messageInput instanceof Field && this.children.messageInput.element !== null) {
+          const inputElement = this.children.messageInput.element.querySelector('input');
+          if (inputElement !== null) {
+            setValidator(inputElement, validateMessage);
+            console.log(inputElement.value);
+          }
+        }
+      });
+    }
+  }
 
   render() {
     return this.compile(message_module, {});

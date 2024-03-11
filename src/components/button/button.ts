@@ -2,9 +2,11 @@ import button from './button.pug';
 import Block from '../../utils/Block';
 
 type Props = {
-  label: string;
+  label?: string;
   type?: string;
   classes?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export default class Button extends Block {

@@ -5,6 +5,10 @@
   font-size: 0.56rem;
 }
 
+.label-invisible {
+  display: none;
+}
+
 .input-text {
   border: none;
   color: var(--text-color);

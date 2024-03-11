@@ -34,6 +34,8 @@
     "vituum": "^1.1.0"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "@types/validator": "^13.11.9",
+    "express": "^4.18.2",
+    "validator": "^13.11.0"
   }
 }

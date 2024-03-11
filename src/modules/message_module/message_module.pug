@@ -20,9 +20,9 @@ block content
         .flex-top-bottom
           form.flex-space-between
             img(src="/src/assets/clip.svg" alt="Clip image")
-            input(type="text" placeholder="message" class="message-placeholder")
-            button(type="submit" class="ax-button")
-              img(src="/src/assets/forward_arrow.svg" alt="Forward Arrow")
+            .flex-grow|!{messageInput}
+            |!{submitButton}
+
 
 
         
