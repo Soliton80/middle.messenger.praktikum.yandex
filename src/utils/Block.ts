@@ -67,17 +67,17 @@ export default class Block {
 
   get element() { return this._element; }
 
-private _render(): void {
-  const fragment = this.render();
-  const newElement = fragment.firstChild;
-  if (newElement && newElement instanceof HTMLElement) {
-    if (this._element) {
-      this._element.replaceWith(newElement);
+  private _render(): void {
+    const fragment = this.render();
+    const newElement = fragment.firstChild;
+    if (newElement && newElement instanceof HTMLElement) {
+      if (this._element) {
+        this._element.replaceWith(newElement);
+      }
+      this._element = newElement;
+      this._addEvents();
     }
-    this._element = newElement;
-    this._addEvents();
   }
-}
 
   protected render(): DocumentFragment { return new DocumentFragment(); }
 
@@ -98,10 +98,26 @@ private _render(): void {
       deleteProperty() { throw new Error("no access"); }
     });
   }
+  setTitle(title: string): void {
+    document.title = title;
+  }
 
-private _createDocumentElement(tagName: string) {
-  return document.createElement(tagName);
+  setMetaDescription(description: string): void {
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) {
+    meta.setAttribute('content', description);
+  } else {
+    const newMeta = document.createElement('meta');
+    newMeta.name = 'description';
+    newMeta.content = description;
+    document.head.appendChild(newMeta);
+  }
 }
+
+
+  private _createDocumentElement(tagName: string) {
+    return document.createElement(tagName);
+  }
 
   getPropsAndChildren(getPropsAndChildren: any) {
     const children: any = {};
@@ -120,15 +136,23 @@ private _createDocumentElement(tagName: string) {
 
   protected initChildren() { }
 
-  protected compile(template: (context: any) => string, context: object) {
+  protected compile(template: (context: any) => string, context: { title?: string, description?: string, [key: string]: any }) {
     const contextAndStubs = { ...context };
+
+    if (context.title) {
+      this.setTitle(context.title);
+    }
+    if (context.description) {
+      this.setMetaDescription(context.description);
+    }
+
     Object.entries(this.children).forEach(([name, component]: [string, any]) => {
-  if (Array.isArray(component) && component.every((c: any) => c instanceof Block)) {
-    (contextAndStubs as { [key: string]: string | string[] })[name] = component.map((comp: { id: string }) => `<div data-id="${comp.id}"></div>`);
-  } else if (!Array.isArray(component)) {
-    (contextAndStubs as { [key: string]: string | string[] })[name] = `<div data-id="${component.id}"></div>`;
-  }
-});
+      if (Array.isArray(component) && component.every((c: any) => c instanceof Block)) {
+        (contextAndStubs as { [key: string]: string | string[] })[name] = component.map((comp: { id: string }) => `<div data-id="${comp.id}"></div>`);
+      } else if (!Array.isArray(component)) {
+        (contextAndStubs as { [key: string]: string | string[] })[name] = `<div data-id="${component.id}"></div>`;
+      }
+    });
     const htmlString = template(contextAndStubs);
     const fragment = this._createDocumentElement('template') as HTMLTemplateElement
     fragment.innerHTML = htmlString;
@@ -150,18 +174,18 @@ private _createDocumentElement(tagName: string) {
     });
     return fragment.content;
   }
-show() {
-  const content = this.getContent();
-  if (content) {
-    content.style.display = "block";
+  show() {
+    const content = this.getContent();
+    if (content) {
+      content.style.display = "block";
+    }
   }
-}
 
-hide() {
-  const content = this.getContent();
-  if (content) {
-    content.style.display = "none";
+  hide() {
+    const content = this.getContent();
+    if (content) {
+      content.style.display = "none";
+    }
   }
-}
 }
 

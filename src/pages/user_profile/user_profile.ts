@@ -13,6 +13,6 @@ export class UserProfile extends Block {
   }
 
   render() {
-    return this.compile(user_profile, {})
+    return this.compile(user_profile, {description: "User Profile"})
   }
 }

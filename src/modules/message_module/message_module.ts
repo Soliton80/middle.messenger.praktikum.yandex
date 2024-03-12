@@ -49,7 +49,7 @@ export default class MessageModule extends Block {
     this.children.submitButton = new Button({
       classes: 'd',
       type: 'submit',
-      imageSrc:  "/src/assets/forward_arrow.svg",
+      imageSrc:  "assets/forward_arrow.svg",
       imageAlt: "Forward Arrow" 
     });
 

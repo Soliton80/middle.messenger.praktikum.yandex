@@ -21,7 +21,7 @@ export default class ChatModule extends Block {
         unread: 2
       },
       {
-        avatar: "/src/assets/chat_avatar.svg",
+        avatar: "assets/chat_avatar.svg",
         name: 'Петя',
         intro: "ipsum dolor sit amet, consectetur adipisicing elit. Ipsa,",
         time: "9:49",
@@ -69,7 +69,7 @@ export default class ChatModule extends Block {
         time: "10:49",
         unread: 2
       },
-      
+
     ].map(chat => new ChatItem({
       avatar: chat.avatar,
       name: chat.name,

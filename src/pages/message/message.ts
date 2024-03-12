@@ -13,6 +13,6 @@ export class Message extends Block {
   }
 
   render() {
-    return this.compile(message, {})
+    return this.compile(message, {title: 'Message', description: 'Message'})
   }
 }

@@ -13,6 +13,6 @@ export class SignUp extends Block {
   }
 
   render() {
-    return this.compile(sign_up, {})
+    return this.compile(sign_up, {description: 'Sign Up to chats'})
   }
 }

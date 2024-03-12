@@ -2,24 +2,24 @@ block content
   .flex-100width
     .left-bar
       a(href="#")
-          img(src="/src/assets/back_arrow.svg" alt="Back Arrow")
+          img(src="assets/back_arrow.svg" alt="Back Arrow")
     
     .flex-column-100width
         .flex-top-bottom
           .flex-space-between
             .flex-align-center
               p#header-p-margin
-                img(src="/src/assets/user-circle.svg" alt="User Circle")
+                img(src="assets/user-circle.svg" alt="User Circle")
               p.chats-name Vanya
             div
               p
-                img(src="/src/assets/vertical_dots.svg" alt="Vertical Dots")
+                img(src="assets/vertical_dots.svg" alt="Vertical Dots")
         .flex-grow
           each message in messagesList
             |!{message}
         .flex-top-bottom
           form.flex-space-between
-            img(src="/src/assets/clip.svg" alt="Clip image")
+            img(src="assets/clip.svg" alt="Clip image")
             .flex-grow|!{messageInput}
             |!{submitButton}
 

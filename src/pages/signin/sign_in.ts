@@ -4,6 +4,7 @@ import sign_in from './sign_in.pug'
 
 
 
+
 export class SignIn extends Block {
 
   constructor() {
@@ -11,10 +12,10 @@ export class SignIn extends Block {
   }
 
   protected initChildren(): void {
-    this.children.SignIn = new SigninForm( { textLink: 'Sign Up' });
+    this.children.SignIn = new SigninForm({ textLink: 'Sign Up' });
   }
 
   render() {
-    return this.compile(sign_in, {});
+    return this.compile(sign_in, { title: 'Sign In', description: 'Sign in to chat'});
   }
 }

@@ -7,12 +7,12 @@ export class ChatPage extends Block {
   constructor() {
     super();
   }
-  
+
   protected initChildren(): void {
     this.children.chatPage = new ChatModule();
   }
 
   render() {
-    return this.compile(chats, {})
+    return this.compile(chats, { title: 'Chats', description: 'Chats'})
   }
 }
