@@ -1,6 +1,6 @@
 This is a learning project completing on the yandex mf course.
 
-[Link to pull_request sprint_1 ](https://github.com/Soliton80/middle.messenger.praktikum.yandex/pull/1)
+[Link to pull_request sprint_2 ](https://github.com/Soliton80/middle.messenger.praktikum.yandex/pull/2)
 
 The project implies a working version of web-messenger frontend working with api.
 
