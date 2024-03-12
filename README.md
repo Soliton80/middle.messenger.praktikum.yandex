@@ -23,13 +23,12 @@ The project has CI github configured: build dockercontainer with expressjs - dep
 Examples of Accessible Pages
 
 * messenger.sukharev.ru
-* messenger.sukharev.ru/404
-* messenger.sukharev.ru/500
-* messenger.sukharev.ru/chats
-* messenger.sukharev.ru/message
-* messenger.sukharev.ru/signup
-* messenger.sukharev.ru/user_profile
-*
+* 
+router is in project
+
+- made components structure usin Block class
+- added validation
+- added requests.ts
 
 This line is for passing the sprint_1 test. The problem is that I couldn't register on **netlify.app**
 Although I even sent them a photo of my documents. Not registered
