@@ -11,7 +11,7 @@ export class SignIn extends Block {
   }
 
   protected initChildren(): void {
-    this.children.SignIn = new SigninForm({textLink: 'Sign Up' });
+    this.children.SignIn = new SigninForm( { textLink: 'Sign Up' });
   }
 
   render() {

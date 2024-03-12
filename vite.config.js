@@ -1,26 +1,22 @@
-import vituum from 'vituum';
 import pug from 'rollup-plugin-pug';
-import vitePug from '@vituum/vite-plugin-pug';
-// import { rollup } from 'rollup';
 
 
 export default {
+  root: './src/pages',
   build: {
     rollupOptions: {
       plugins: [
-        pug(),
+        pug({ inlineRuntimeFunctions: true }),
       ],
     },
   },
   plugins: [
-    vituum(),
-    pug(),
-    vitePug({
-      root: './src',
-    }),
+    pug({ inlineRuntimeFunctions: true }),
   ],
+  
   css: {
     postcss: 'postcss.config.cjs',
   },
 
 }
+
