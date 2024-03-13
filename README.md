@@ -1,4 +1,5 @@
 This is a learning project completing on the yandex mf course.
+This is a learning project completing on the yandex mf course.
 
 [Link to pull_request sprint_2 ](https://github.com/Soliton80/middle.messenger.praktikum.yandex/pull/2)
 
