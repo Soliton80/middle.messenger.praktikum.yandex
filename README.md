@@ -16,7 +16,7 @@ vite automatically launches postcss at build
 
 used postcss services: 'autoprefixer'  'PostCSS Preset Env' 'cssnano'
 
-used @vituum/vite-plugin-pug
+used rollup-plugin-pug
 
 The project has CI github configured: build dockercontainer with expressjs - deploy to dockerhub - deploy to private vps - notification of successful deployment by telegramm.
 
