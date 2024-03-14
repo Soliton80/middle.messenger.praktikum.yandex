@@ -1,18 +1,18 @@
-import validator from "validator";
+import validator from 'validator';
 
 export function setValidator(
   inputElement: HTMLInputElement,
   validator: (argument: string) => boolean,
-  events: string[] = ["blur", "focus"]
+  events: string[] = ['blur', 'focus'],
 ) {
   events.forEach((event) => {
     inputElement.addEventListener(event, () => {
       if (validator(inputElement.value)) {
-        inputElement.style.borderWidth = "0px";
+        inputElement.style.borderWidth = '0px';
         console.log(inputElement.value);
       } else {
-        inputElement.style.setProperty("border-width", "2px", "important");
-        inputElement.style.borderColor = "red";
+        inputElement.style.setProperty('border-width', '2px', 'important');
+        inputElement.style.borderColor = 'red';
       }
     });
   });
@@ -20,9 +20,9 @@ export function setValidator(
 
 export function validateLogin(login: string): boolean {
   return (
-    validator.isAlphanumeric(login, undefined, { ignore: "[-_]" }) &&
-    !validator.isNumeric(login) &&
-    validator.isByteLength(login, { min: 3, max: 20 })
+    validator.isAlphanumeric(login, undefined, { ignore: '[-_]' })
+    && !validator.isNumeric(login)
+    && validator.isByteLength(login, { min: 3, max: 20 })
   );
 }
 
