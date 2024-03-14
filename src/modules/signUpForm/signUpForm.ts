@@ -1,8 +1,8 @@
 import Block from '../../utils/Block';
 import Button from '../../components/button/button';
-import Title from "../../components/title/title";
+import Title from '../../components/title/title';
 import Field from '../../components/field/field';
-import sign_up_form from './sign_up_form.pug';
+import signUpForm from './signUpForm.pug';
 import {
   setValidator,
   validateEmail,
@@ -10,30 +10,66 @@ import {
   validateName,
   validatePhone,
   validatePassword,
-} from "../../utils/validators";
+} from '../../utils/validators';
 
 type Props = {
   title: string,
 }
 
 export default class SignupForm extends Block {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props?: Props) {
     super(props);
   }
 
   protected initChildren(): void {
-    this.children.title = new Title({ title: 'Sign Up' })
+    this.children.title = new Title({ title: 'Sign Up' });
     this.children.fields = [
-      { label: 'email', autocomplete: 'email', placeholder: "kirill@sukharev.ru" },
-      { label: 'login', autocomplete: 'username', placeholder: "username" },
-      { label: 'first_name', autocomplete: 'name', placeholder: "Vanya" },
-      { label: 'second_name', autocomplete: 'family-name', placeholder: "Ivanov" },
-      { label: 'phone', autocomplete: 'tel', placeholder: "+7 (777) 777 77 77" },
-      { label: 'password', autocomplete: 'current-password', type: 'password', classInput: 'input-text password-mask' },
-      { label: 'repeat password', autocomplete: 'current-password', type: 'password', classInput: 'input-text password-mask'},
-    ].map(field => new Field({ label: field.label, autocomplete: field.autocomplete, type: field.type, placeholder: field.placeholder, classInput: field.classInput }))
-
-    this.children.button = new Button({ label: 'Sign Up' })
+      {
+        label: 'email',
+        autocomplete: 'email',
+        placeholder: 'kirill@sukharev.ru',
+      },
+      {
+        label: 'login',
+        autocomplete: 'username',
+        placeholder: 'username',
+      },
+      {
+        label: 'first_name',
+        autocomplete: 'name',
+        placeholder: 'Vanya',
+      },
+      {
+        label: 'second_name',
+        autocomplete: 'family-name',
+        placeholder: 'Ivanov',
+      },
+      {
+        label: 'phone',
+        autocomplete: 'tel',
+        placeholder: '+7 (777) 777 77 77',
+      },
+      {
+        label: 'password',
+        autocomplete: 'current-password',
+        type: 'password',
+        classInput: 'input-text password-mask',
+      },
+      {
+        label: 'repeat password',
+        autocomplete: 'current-password',
+        type: 'password',
+        classInput: 'input-text password-mask',
+      },
+    ].map((field) => new Field({
+      label: field.label,
+      autocomplete: field.autocomplete,
+      type: field.type,
+      placeholder: field.placeholder,
+      classInput: field.classInput,
+    }));
+    this.children.button = new Button({ label: 'Sign Up' });
 
     if (Array.isArray(this.children.fields)) {
       this.children.fields.forEach((field: Block) => {
@@ -57,6 +93,9 @@ export default class SignupForm extends Block {
                   break;
                 case 'password':
                   setValidator(inputElement, validatePassword);
+                  break;
+                default:
+                  console.warn('No validation function found for this field');
                   break;
               }
             });
@@ -82,6 +121,6 @@ export default class SignupForm extends Block {
   }
 
   render() {
-    return this.compile(sign_up_form, { ...this.props })
+    return this.compile(signUpForm, { ...this.props });
   }
 }

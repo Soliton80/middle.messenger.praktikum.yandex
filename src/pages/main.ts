@@ -1,11 +1,10 @@
-import { SignIn } from '../pages/signin/sign_in';
-import { SignUp } from '../pages/signup/sign_up';
-import { UserProfile } from '../pages/user_profile/user_profile';
-import { ChatPage } from '../pages/chats/chats';
-import { Message } from '../pages/message/message';
+import SignIn from './signIn/signIn';
+// import SignUp from './signUp/signUp';
+// import UserProfile from './userProfile/userProfile';
+// import ChatPage from './chats/chats';
+// import Message from './message/message';
 
-
-import { renderDOM } from '../utils/renderDOM';
+import renderDOM from '../utils/renderDOM';
 
 window.addEventListener('DOMContentLoaded', () => {
   const page = new SignIn();

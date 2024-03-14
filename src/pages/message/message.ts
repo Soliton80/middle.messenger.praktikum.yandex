@@ -1,18 +1,13 @@
-import Block from "../../utils/Block";
-import MessageModule from "../../modules/message_module/message_module";
-import message from './message.pug'
+import Block from '../../utils/Block';
+import MessageModule from '../../modules/messageModule/messageModule';
+import message from './message.pug';
 
-export class Message extends Block {
-
-  constructor() {
-    super();
-  }
-
+export default class Message extends Block {
   protected initChildren(): void {
     this.children.message = new MessageModule();
   }
 
   render() {
-    return this.compile(message, {title: 'Message', description: 'Message'})
+    return this.compile(message, { title: 'Message', description: 'Message' });
   }
 }

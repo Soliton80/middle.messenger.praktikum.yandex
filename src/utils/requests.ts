@@ -1,29 +1,30 @@
-enum METHOD {
-  GET = "GET",
-  POST = "POST",
-  PUT = "PUT",
-  PATCH = "PATCH",
-  DELETE = "DELETE",
+/* eslint-disable no-shadow */
+enum HttpRequestMethods {
+  GET = 'GET',
+  POST = 'POST',
+  PUT = 'PUT',
+  PATCH = 'PATCH',
+  DELETE = 'DELETE',
 }
 
 type Options = {
-  method: METHOD;
+  method: HttpRequestMethods;
   data?: any;
 };
 
-type OptionsWithoutMethod = Omit<Options, "method">;
+type OptionsWithoutMethod = Omit<Options, 'method'>;
 
-class HTTPTransport {
+export default class HTTPTransport {
   get(
     url: string,
-    options: OptionsWithoutMethod = {}
+    options: OptionsWithoutMethod = {},
   ): Promise<XMLHttpRequest> {
-    return this.request(url, { ...options, method: METHOD.GET });
+    return this.request(url, { ...options, method: HttpRequestMethods.GET });
   }
 
   request(
     url: string,
-    options: Options = { method: METHOD.GET }
+    options: Options = { method: HttpRequestMethods.GET },
   ): Promise<XMLHttpRequest> {
     const { method, data } = options;
 
@@ -31,15 +32,15 @@ class HTTPTransport {
       const xhr = new XMLHttpRequest();
       xhr.open(method, url);
 
-      xhr.addEventListener("load", function () {
+      xhr.addEventListener('load', () => {
         resolve(xhr);
       });
 
-      xhr.addEventListener("abort", reject);
-      xhr.addEventListener("onerror", reject);
+      xhr.addEventListener('abort', reject);
+      xhr.addEventListener('onerror', reject);
       xhr.ontimeout = reject;
 
-      if (method === METHOD.GET || !data) {
+      if (method === HttpRequestMethods.GET || !data) {
         xhr.send();
       } else {
         xhr.send(data);

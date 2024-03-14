@@ -1,7 +1,6 @@
 import Block from '../../utils/Block';
 import field from './field.pug';
 
-
 type Props = {
   label: string;
   id?: string;
@@ -19,11 +18,11 @@ type Props = {
 };
 
 export default class Field extends Block {
-
+  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
-  
+
   public getLabel(): string {
     return this.props.label;
   }
@@ -32,4 +31,3 @@ export default class Field extends Block {
     return this.compile(field, { ...this.props });
   }
 }
-

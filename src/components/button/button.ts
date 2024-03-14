@@ -10,12 +10,12 @@ type Props = {
 };
 
 export default class Button extends Block {
-
+  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
 
   render() {
-    return this.compile(button, { ...this.props })
+    return this.compile(button, { ...this.props });
   }
 }
