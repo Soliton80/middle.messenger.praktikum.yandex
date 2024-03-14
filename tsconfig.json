@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "lib": ["es2017", "dom"],
-    "target": "es2017", // Specify the ECMAScript target version
-    "module": "commonjs", // Specify the module system
-    "outDir": "./dist", // Specify the output directory for compiled files
-    "strict": true, // Enable strict type-checking
-    "esModuleInterop": true, // Enable compatibility with CommonJS modules
-    "sourceMap": true // Generate source maps for better debugging
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "sourceMap": true
   },
   "include": [
     "src/**/*.ts",
     "declarations.d.ts"
-  ], 
-  "exclude": ["node_modules"] // Specify the files to be excluded from compilation
+  ],
+  "exclude": ["node_modules"]
 }
