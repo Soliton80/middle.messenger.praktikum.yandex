@@ -3,7 +3,6 @@
 @import url('../styles/components/_base.css') layer(base);
 @import url('../styles/components/helpers.css') layer(component);
 @import url('../styles/components/layouts.css') layer(component);
-
 @import url('../components/button/button.css') layer(component);
 @import url('../components/field/field.css') layer(component);
 @import url('../components/form/form.css') layer(component);
@@ -12,9 +11,6 @@
 @import url('../components/chatItem/chatItem.css') layer(component);
 @import url('../components/messageItem/messageItem.css') layer(component);
 @import url('../components/searchField/searchField.css') layer(component);
-
 @import url('../modules/userProfileModul/userProfileModul.css') layer(module);
 @import url('../modules/chatModule/chatModule.css') layer(module);
 @import url('../modules/messageModule/messageModule.css') layer(module);
-
-

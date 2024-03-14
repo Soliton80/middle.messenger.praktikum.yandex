@@ -10,14 +10,14 @@
   margin-bottom: 9px;
 }
 
-.form-group:last-child .profile-input-text {
-  border-bottom: none;
-}
-
 .profile-input-text {
   border: none;
   border-bottom: 1px solid var(--light-color);
   padding: 10px 0;
+}
+
+.form-group:last-child .profile-input-text {
+  border-bottom: none;
 }
 
 .right-aligned-placeholder::placeholder {
