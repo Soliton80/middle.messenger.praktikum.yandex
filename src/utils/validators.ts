@@ -2,12 +2,12 @@ import validator from 'validator';
 
 export function setValidator(
   inputElement: HTMLInputElement,
-  validator: (argument: string) => boolean,
+  myValidator: (argument: string) => boolean,
   events: string[] = ['blur', 'focus'],
 ) {
   events.forEach((event) => {
     inputElement.addEventListener(event, () => {
-      if (validator(inputElement.value)) {
+      if (myValidator(inputElement.value)) {
         inputElement.style.borderWidth = '0px';
         console.log(inputElement.value);
       } else {
@@ -31,7 +31,7 @@ export function validateEmail(email: string): boolean {
 }
 
 export function validateName(name: string): boolean {
-  return validator.isAlpha(name) && name[0] == name[0].toUpperCase();
+  return validator.isAlpha(name) && name[0] === name[0].toUpperCase();
 }
 
 export function validatePhone(name: string): boolean {

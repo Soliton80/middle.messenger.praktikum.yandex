@@ -12,6 +12,6 @@ export default class Titles extends Block {
   }
 
   render() {
-    return this.compile(title, { ...this.props })
+    return this.compile(title, { ...this.props });
   }
 }
