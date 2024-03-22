@@ -2,9 +2,9 @@ name: middle.messenger.praktikum.yandex_project
 
 on:
   push:
-    branches: [ "sprint_1" ]
+    branches: [ "sprint_2" ]
   pull_request:
-    branches: [ "sprint_1" ]
+    branches: [ "sprint_2" ]
 
 jobs:
   build:

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": ["es2017", "dom"],
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "declarations.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}

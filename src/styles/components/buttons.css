@@ -1,9 +1,0 @@
-.sign-button {
-  border-radius: 8px;
-  font-size: 0.81rem;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  text-align: center;
-  padding: 22px 60px;
-  width: 100%;
-}

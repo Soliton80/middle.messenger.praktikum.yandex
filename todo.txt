@@ -1,0 +1,3 @@
+4) * cant pass parent class props 
+6) DOMContentLoaded time > 4s
+7) change title component (conflict with method)

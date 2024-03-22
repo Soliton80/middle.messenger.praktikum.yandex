@@ -14,7 +14,7 @@ dist-ssr
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
+# !.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 send_secrets.sh
 sprint*
-utils
 node_build*

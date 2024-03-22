@@ -1,0 +1,28 @@
+.message {
+  border-radius: 10px;
+  width: 80%;
+  background-color: var(--backstage-color);
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.message-reply {
+  border-radius: 10px;
+  width: 80%;
+  background-color: var(--backstage-color-responce);
+  padding: 5px;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+.message-placeholder {
+  width: 100%;
+  background-color: #efefef;
+  border-radius: 30px;
+  height: 24px;
+  padding-left: 10px;
+}
+
+#header-p-margin {
+  margin-right: 15px;
+}

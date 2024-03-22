@@ -1,21 +1,19 @@
-import vituum from 'vituum'
-import pug from '@vituum/vite-plugin-pug'
+import pug from 'rollup-plugin-pug';
 
-
-
-export default ({
-    plugins: [
-        vituum(),
-        pug({
-            root: './src',
-        })
-    ],
-    css: {
-        postcss: 'postcss.config.cjs'
+export default ({ mode }) => ({
+  root: './src',
+  build: {
+    outDir: '../dist',
+    rollupOptions: {
+      plugins: [
+        pug(),
+      ],
     },
-
-    build: {
-        outDir: 'public/dist',
-    },
-
+  },
+  plugins: mode === 'development' ? [
+    pug(),
+  ] : [],
+  css: {
+    postcss: 'postcss.config.cjs',
+  },
 });

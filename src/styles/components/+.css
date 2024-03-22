@@ -1,9 +1,3 @@
-@import "_base.css";
-@import "avatar.css";
-@import "buttons.css";
-@import "chats.css";
-@import "forms.css";
-@import "helpers.css";
-@import "layouts.css";
-@import "message.css";
-@import "typography.css";
+@import url("_base.css");
+@import url("helpers.css");
+@import url("layouts.css");

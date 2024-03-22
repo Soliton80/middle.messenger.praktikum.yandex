@@ -1,0 +1,45 @@
+.form-group {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.input-text,
+.profile-input-text {
+  width: 100%;
+  background-color: transparent;
+  font-size: 0.8rem;
+  margin-bottom: 9px;
+}
+
+.profile-input-text {
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  padding: 10px 0;
+}
+
+.form-group:last-child .profile-input-text {
+  border-bottom: none;
+}
+
+.right-aligned-placeholder::placeholder {
+  text-align: right;
+  padding-right: 15px;
+}
+
+.margin-container > * {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.sign-link,
+.sign-link-red {
+  color: var(--primary-color);
+  font-size: 0.81rem;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.sign-link-red {
+  color: var(--red-color);
+}

@@ -1,0 +1,50 @@
+
+.input-label {
+  position: absolute;
+  padding-bottom: 8px;
+  left: 0;
+  font-weight: 500;
+  font-size: 0.87rem;
+  line-height: 2px;
+  margin-top: 14px;
+  color: var(--light-color);
+  transform: translateY(0) scale(1);
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--primary-color);
+  padding: 7px 0;
+  
+}
+
+.input-text::placeholder {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+
+.input-text:not(:placeholder-shown) ~ .input-label,
+.input-text:focus ~ .input-label {
+  transform: translate(-6px, -14px) scale(0.7);
+}
+
+
+.password-mask {
+  color: var(--red-color);
+}
+
+.message-placeholder:focus,
+.profile-input-text:focus,
+.input-text:focus {
+  outline: none;
+}
+
+.label-invisible {
+  display: none;
+}
+
