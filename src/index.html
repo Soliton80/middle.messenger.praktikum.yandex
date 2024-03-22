@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <main class="main-container"></main>
+
+  <!-- Temporary Styles and nav -->
+  <style>
+    nav {
+      width: 100%;
+      border: 1px solid #000;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    nav-ul {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 50px;
+    }
+    nav-ul li {
+      all: unset;
+    }
+  </style>
+
+  <nav>
+    <nav-ul>
+      <li><a href="/" page="404">404</a></li>
+      <li><a href="/" page="500">500</a></li>
+      <li><a href="/" page="ChatPage">chats</a></li>
+      <li><a href="/" page="Message">message</a></li>
+      <li><a href="/" page="SignIn">signIn</a></li>
+      <li><a href="/" page="SignUp">signUp</a></li>
+      <li><a href="/" page="UserProfile">userProfile</a></li>
+    </nav-ul>
+  </nav>
+  <!-- End of Temporary Styles and nav -->
+
+  <script type="module" src="./main.ts" defer="true"> </script>
+
+</body>
+
+</html>

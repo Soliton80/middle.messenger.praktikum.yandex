@@ -16,7 +16,6 @@ export default class Profile extends Block {
   }
 
   protected initChildren(): void {
-    console.log('this.props', this.props);
     this.children.profileAvatar = new ProfileAvatar({
       avatar: '/assets/avatar.svg',
     });

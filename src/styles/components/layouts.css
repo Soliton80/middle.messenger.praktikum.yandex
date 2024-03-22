@@ -1,6 +1,6 @@
 .main-container {
   max-width: 355px;
-  min-height: 689px;
+  height: 689px;
   margin: 55px auto;
   border-radius: 12px;
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
@@ -50,7 +50,7 @@
 .flex-center {
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100%;
 }
 
 .flex-100width {
@@ -70,4 +70,8 @@
 
 .flex-top-bottom {
   flex: 0 0 52;
+}
+
+.position-relative {
+  position: relative;
 }

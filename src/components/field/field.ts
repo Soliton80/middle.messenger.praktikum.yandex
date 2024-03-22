@@ -2,7 +2,7 @@ import Block from '../../utils/Block';
 import field from './field.pug';
 
 type Props = {
-  label: string;
+  label?: string;
   id?: string;
   type?: string;
   value?: string;
@@ -11,9 +11,10 @@ type Props = {
   classInput?: string;
   classDiv?: string;
   classLabel?: string;
+  errorMessage?: any;
   events?: {
-    blur: () => void;
-    focus: () => void;
+    blur: (event: Event) => void;
+    click: (event: Event) => void;
   }
 };
 
@@ -22,12 +23,10 @@ export default class Field extends Block {
   constructor(props: Props) {
     super(props);
   }
-
-  public getLabel(): string {
+  getLabel() {
     return this.props.label;
   }
-
   render() {
-    return this.compile(field, { ...this.props });
+    return this.compile(field, { ...this.props});
   }
 }

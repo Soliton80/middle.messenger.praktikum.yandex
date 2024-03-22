@@ -23,101 +23,83 @@ export default class SignupForm extends Block {
   }
 
   protected initChildren(): void {
+
+    const handleEvent = (validator: (argument: string) => string) => (event: Event) => {
+      const target = event.target as HTMLInputElement;
+      setValidator(target, validator);
+    };
+
+
     this.children.title = new Title({ title: 'Sign Up' });
     this.children.fields = [
       {
         label: 'email',
         autocomplete: 'email',
         placeholder: 'kirill@sukharev.ru',
+        events: {
+          blur: handleEvent(validateEmail),
+          click: handleEvent(validateEmail),
+        },
       },
       {
         label: 'login',
         autocomplete: 'username',
         placeholder: 'username',
+        events: {
+          blur: handleEvent(validateLogin),
+          click: handleEvent(validateLogin),
+        },
       },
       {
         label: 'first_name',
         autocomplete: 'name',
         placeholder: 'Vanya',
+        events: {
+          blur: handleEvent(validateName),
+          click: handleEvent(validateName),
+        },
       },
       {
         label: 'second_name',
         autocomplete: 'family-name',
         placeholder: 'Ivanov',
+        events: {
+          blur: handleEvent(validateName),
+          click: handleEvent(validateName),
+        },
       },
       {
         label: 'phone',
         autocomplete: 'tel',
         placeholder: '+7 (777) 777 77 77',
+        events: {
+          blur: handleEvent(validatePhone),
+          click: handleEvent(validatePhone),
+        },
       },
       {
         label: 'password',
         autocomplete: 'current-password',
         type: 'password',
         classInput: 'input-text password-mask',
+        events: {
+          blur: handleEvent(validatePassword),
+          click: handleEvent(validatePassword),
+        },
       },
       {
         label: 'repeat password',
         autocomplete: 'current-password',
         type: 'password',
         classInput: 'input-text password-mask',
+        events: {
+          blur: handleEvent(validatePassword),
+          click: handleEvent(validatePassword),
+        },
       },
-    ].map((field) => new Field({
-      label: field.label,
-      autocomplete: field.autocomplete,
-      type: field.type,
-      placeholder: field.placeholder,
-      classInput: field.classInput,
-    }));
+    ].map((field) => new Field(field));
     this.children.button = new Button({ label: 'Sign Up' });
 
-    if (Array.isArray(this.children.fields)) {
-      this.children.fields.forEach((field: Block) => {
-        if (field instanceof Field && field.element !== null) {
-          const inputElement = field.element.querySelector('input');
-          if (inputElement !== null) {
-            inputElement.addEventListener('blur', () => {
-              switch (field.getLabel()) {
-                case 'email':
-                  setValidator(inputElement, validateEmail);
-                  break;
-                case 'login':
-                  setValidator(inputElement, validateLogin);
-                  break;
-                case 'first_name':
-                case 'second_name':
-                  setValidator(inputElement, validateName);
-                  break;
-                case 'phone':
-                  setValidator(inputElement, validatePhone);
-                  break;
-                case 'password':
-                  setValidator(inputElement, validatePassword);
-                  break;
-                default:
-                  console.warn('No validation function found for this field');
-                  break;
-              }
-            });
-          }
-        }
-      });
-    }
-
-    if (this.children.button.element !== null) {
-      this.children.button.element.addEventListener('click', () => {
-        if (Array.isArray(this.children.fields)) {
-          this.children.fields.forEach((field: Block) => {
-            if (field instanceof Field && field.element !== null) {
-              const inputElement = field.element.querySelector('input');
-              if (inputElement !== null) {
-                console.log(inputElement.value);
-              }
-            }
-          });
-        }
-      });
-    }
   }
 
   render() {

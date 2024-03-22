@@ -10,6 +10,12 @@ import {
 
 export default class MessageModule extends Block {
   protected initChildren(): void {
+
+    const handleEvent = (validator: (argument: string) => string) => (event: Event) => {
+      const target = event.target as HTMLInputElement;
+      setValidator(target, validator);
+    };
+
     this.children.messagesList = [
       {
         text: '!Lorem ipsum dolor sit amet, consectetur adipisicing elit,'
@@ -29,11 +35,7 @@ export default class MessageModule extends Block {
         time: '10:49',
       },
 
-    ].map((message) => new MessageItem({
-      class_author: message.class_author,
-      text: message.text,
-      time: message.time,
-    }));
+    ].map((message) => new MessageItem(message));
 
     this.children.messageInput = new Field({
       label: 'message',
@@ -41,6 +43,10 @@ export default class MessageModule extends Block {
       placeholder: 'Type your message here...',
       classInput: 'message-placeholder',
       classLabel: 'label-invisible',
+      events: {
+        blur: handleEvent(validateMessage),
+        click: handleEvent(validateMessage),
+      },
     });
 
     this.children.submitButton = new Button({
@@ -49,32 +55,6 @@ export default class MessageModule extends Block {
       imageSrc: 'assets/forward_arrow.svg',
       imageAlt: 'Forward Arrow',
     });
-
-    if (this.children.messageInput.element !== null) {
-      const messageInputElement = this.children.messageInput.element;
-      const inputElement = messageInputElement.querySelector('input');
-      if (inputElement !== null) {
-        inputElement.addEventListener('blur', () => {
-          setValidator(inputElement, validateMessage);
-        });
-      }
-    }
-
-    if (this.children.submitButton?.element !== null) {
-      this.children.submitButton.element.addEventListener('click', () => {
-        if (
-          this.children.messageInput instanceof Field
-          && this.children.messageInput.element !== null
-        ) {
-          const messageInputElement = this.children.messageInput.element;
-          const inputElement = messageInputElement.querySelector('input');
-          if (inputElement !== null) {
-            setValidator(inputElement, validateMessage);
-            console.log(inputElement.value);
-          }
-        }
-      });
-    }
   }
 
   render() {

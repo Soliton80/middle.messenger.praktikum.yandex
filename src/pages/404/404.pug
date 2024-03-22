@@ -1,9 +1,5 @@
-extends /layouts/main.pug
-block var
-  - var title = '404 error'
-  - var description = 'Page not found'
 block content
   .flex-center
-    h1 404
+    h1=title
     p Page not found
-    a(href="chats") back to chats
+    a(href="/") back to sign in

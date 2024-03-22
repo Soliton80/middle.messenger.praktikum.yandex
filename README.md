@@ -1,5 +1,4 @@
 This is a learning project completing on the yandex mf course.
-This is a learning project completing on the yandex mf course.
 
 [Link to pull_request sprint_2 ](https://github.com/Soliton80/middle.messenger.praktikum.yandex/pull/2)
 
@@ -21,13 +20,15 @@ used rollup-plugin-pug
 
 The project has CI github configured: build dockercontainer with expressjs - deploy to dockerhub - deploy to private vps - notification of successful deployment by telegramm.
 
-Examples of Accessible Pages
+Accessible Pages Examples
 
-* messenger.sukharev.ru
-* 
+**vps deployed**
+
+* [messenger.sukharev.ru](https://messenger.sukharev.ru)
+
 router is in project
 
-- made components structure usin Block class
+- made components structure using Block and EventBus classes
 - added validation
 - added requests.ts
 

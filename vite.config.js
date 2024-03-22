@@ -1,9 +1,9 @@
 import pug from 'rollup-plugin-pug';
 
 export default ({ mode }) => ({
-  root: './src/pages',
+  root: './src',
   build: {
-    outDir: '../../dist',
+    outDir: '../dist',
     rollupOptions: {
       plugins: [
         pug(),

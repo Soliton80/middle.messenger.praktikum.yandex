@@ -1,10 +1,10 @@
 extends ../../components/form/form.pug
 
 block content
-  div 
+  .position-relative
     | !{title}
     each field in fields
-          | !{field}
+      | !{field}
   .flex-column
     | !{button}
     a(href="#").sign-link !{textLink}

@@ -11,5 +11,4 @@ export default function renderDOM(domSelector: string, component: Block) {
 
   dom.append(component.getContent()!);
 
-  console.log(component);
 }

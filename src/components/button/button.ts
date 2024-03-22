@@ -7,6 +7,9 @@ type Props = {
   classes?: string;
   imageSrc?: string;
   imageAlt?: string;
+  events?: {
+    click: (event: Event) => void;
+  }
 };
 
 export default class Button extends Block {

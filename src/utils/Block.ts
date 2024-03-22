@@ -29,7 +29,10 @@ export default class Block {
     this.eventBus = () => eventBus;
     this.registerEvents(eventBus);
     eventBus.emit(Block.EVENTS.INIT, null, null);
+    this._addEvents();
+    this._removeEvents();
   }
+
 
   private registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
@@ -40,7 +43,27 @@ export default class Block {
 
   init() { this.eventBus().emit(Block.EVENTS.FLOW_RENDER); }
 
-  private componentDidMount() { this.componentDidMount(); }
+  private _addEvents() {
+    if (this.props.events) {
+      const inputElement = this.element!.querySelector('input');
+      if (inputElement) {
+        Object.keys(this.props.events).forEach((event) => {
+          inputElement.addEventListener(event, this.props.events[event]);
+        });
+      }
+    }
+  }
+
+  private _removeEvents() {
+    if (this.props.events) {
+      Object.keys(this.props.events).forEach((event) => {
+        this.element!.removeEventListener(event, this.props.events[event]);
+      });
+    }
+  }
+
+
+  componentDidMount() { this.componentDidMount(); }
 
   dispatchComponentDidMount() { this.eventBus().emit(Block.EVENTS.FLOW_CDM); }
 
@@ -56,8 +79,11 @@ export default class Block {
 
   setProps = (nextProps: object) => {
     if (!nextProps) return;
+    this._removeEvents();
     Object.assign(this.props, nextProps);
+    this._addEvents();
   };
+
 
   get element() { return this.el; }
 

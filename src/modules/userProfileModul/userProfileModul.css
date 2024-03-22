@@ -1,5 +1,6 @@
 .form-group {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .input-text,

@@ -1,8 +1,4 @@
 div(class=classDiv ? classDiv : null)
-  label(
-    class=classLabel ? classLabel: 'input-label'
-    for=label
-  )= label
   input(
     class=classInput ? classInput : 'input-text'
     type=type ? type : 'text'
@@ -11,3 +7,9 @@ div(class=classDiv ? classDiv : null)
     placeholder=placeholder ? placeholder : label 
     id=id ? id : label
   )
+  label(
+    class=classLabel ? classLabel: 'input-label'
+    for=label
+  )= label
+  if errorMessage 
+    span.inputError= errorMessage
