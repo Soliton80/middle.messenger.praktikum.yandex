@@ -14,4 +14,3 @@
 @import url('./modules/userProfileModul/userProfileModul.css') layer(module);
 @import url('./modules/chatModule/chatModule.css') layer(module);
 @import url('./modules/messageModule/messageModule.css') layer(module);
-@import url('./components/errorMessage/errorMessage.css') layer(component);

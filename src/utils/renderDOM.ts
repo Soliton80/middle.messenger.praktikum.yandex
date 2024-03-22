@@ -10,5 +10,4 @@ export default function renderDOM(domSelector: string, component: Block) {
   dom.innerHTML = '';
 
   dom.append(component.getContent()!);
-
 }

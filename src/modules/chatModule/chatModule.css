@@ -3,11 +3,7 @@
   margin: 0 auto;
 }
 
-.sign-link-light {
-  color: var(light-color);
-  font-size: 0.81rem;
-  font-weight: 500;
-}
+
 
 
 .chats-name {
@@ -40,4 +36,6 @@
 
 .sign-link-light {
   color: var(--light-color);
+  font-size: 0.81rem;
+  font-weight: 500;
 }

@@ -5,7 +5,7 @@ type Props = {
   avatar: string;
 };
 
-export default class ProfileAvatar extends Block {
+export default class ProfileAvatar extends Block<Props> {
   // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);

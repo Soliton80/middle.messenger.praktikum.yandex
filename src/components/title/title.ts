@@ -5,7 +5,7 @@ type Props = {
   title: string;
 };
 
-export default class Titles extends Block {
+export default class Titles extends Block<Props> {
   // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);

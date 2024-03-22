@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import EventBus from './EventBus';
 
-export default class Block {
+export default abstract class Block<Props extends Record<string, any> = {}> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -13,14 +13,14 @@ export default class Block {
 
   private el: HTMLElement | null = null;
 
-  protected props: any;
+  protected props: Props;
 
   // eslint-disable-next-line no-use-before-define
   public children: Record<string, Block | Block[]>;
 
   private eventBus: () => any;
 
-  constructor(propsAndChildren: any = {}) {
+  constructor(propsAndChildren: Props = {} as Props) {
     const eventBus = new EventBus();
     const { props, children } = this.getPropsAndChildren(propsAndChildren);
     this.children = children;
@@ -32,7 +32,6 @@ export default class Block {
     this._addEvents();
     this._removeEvents();
   }
-
 
   private registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
@@ -62,7 +61,6 @@ export default class Block {
     }
   }
 
-
   componentDidMount() { this.componentDidMount(); }
 
   dispatchComponentDidMount() { this.eventBus().emit(Block.EVENTS.FLOW_CDM); }
@@ -77,13 +75,12 @@ export default class Block {
     return oldProps !== newProps;
   }
 
-  setProps = (nextProps: object) => {
+  setProps(nextProps: Props): void {
     if (!nextProps) return;
     this._removeEvents();
     Object.assign(this.props, nextProps);
     this._addEvents();
-  };
-
+  }
 
   get element() { return this.el; }
 
@@ -102,21 +99,19 @@ export default class Block {
 
   getContent() { return this.el; }
 
-  private makePropsProxy(props: { [key: string]: any }) {
-    const self = this;
+  private makePropsProxy(props: Props): Props {
     return new Proxy(props, {
-      get(target: { [key: string]: any }, prop: string | symbol) {
-        const value = target[prop as string];
+      get: (target: Props, prop: string | symbol): any => {
+        const value = target[prop as keyof Props];
         return typeof value === 'function' ? value.bind(target) : value;
       },
-      set(target: { [key: string]: any }, prop: string | symbol, value: any) {
-        const targetCopy = { ...target };
-        targetCopy[prop as string] = value;
-        self.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
+      set: (target: Props, prop: string | symbol, value: any): boolean => {
+        target[prop as keyof Props] = value;
+        this.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
         return true;
       },
-      deleteProperty() { throw new Error('no access'); },
-    });
+      deleteProperty: () => { throw new Error('no access'); },
+    }) as Props;
   }
 
   setTitle(title: string): void {
@@ -139,7 +134,7 @@ export default class Block {
     return document.createElement(tagName);
   }
 
-  getPropsAndChildren(getPropsAndChildren: any) {
+  getPropsAndChildren(getPropsAndChildren: Props) {
     const children: any = {};
     const props: any = {};
     Object.entries(getPropsAndChildren).forEach(([key, value]) => {

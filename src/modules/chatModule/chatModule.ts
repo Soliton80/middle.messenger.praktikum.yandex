@@ -66,13 +66,7 @@ export default class ChatModule extends Block {
         unread: 2,
       },
 
-    ].map((chat) => new ChatItem({
-      avatar: chat.avatar,
-      name: chat.name,
-      intro: chat.intro,
-      time: chat.time,
-      unread: chat.unread,
-    }));
+    ].map((chat) => new ChatItem(chat));
   }
 
   render() {

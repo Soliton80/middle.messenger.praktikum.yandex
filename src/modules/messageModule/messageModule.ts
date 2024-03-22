@@ -3,17 +3,13 @@ import MessageItem from '../../components/messageItem/messageItem';
 import Field from '../../components/field/field';
 import Button from '../../components/button/button';
 import messageModule from './messageModule.pug';
-import {
-  setValidator,
-  validateMessage,
-} from '../../utils/validators';
+import Validator from '../../utils/validators';
 
 export default class MessageModule extends Block {
   protected initChildren(): void {
-
-    const handleEvent = (validator: (argument: string) => string) => (event: Event) => {
+    const handleEvent = (v: (argument: string) => string) => (event: Event) => {
       const target = event.target as HTMLInputElement;
-      setValidator(target, validator);
+      Validator.setValidator(target, v);
     };
 
     this.children.messagesList = [
@@ -44,8 +40,8 @@ export default class MessageModule extends Block {
       classInput: 'message-placeholder',
       classLabel: 'label-invisible',
       events: {
-        blur: handleEvent(validateMessage),
-        click: handleEvent(validateMessage),
+        blur: handleEvent(Validator.validateMessage),
+        click: handleEvent(Validator.validateMessage),
       },
     });
 

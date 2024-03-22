@@ -12,7 +12,7 @@ type Props = {
   }
 };
 
-export default class Button extends Block {
+export default class Button extends Block<Props> {
   // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);

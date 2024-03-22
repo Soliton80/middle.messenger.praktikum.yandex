@@ -10,14 +10,15 @@ type Props = {
 }
 
 export default class SigninForm extends Block {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props: Props) {
     super(props);
   }
 
   protected initChildren(): void {
-    const handleEvent = (validator: (argument: string) => string) => (event: Event) => {
+    const handleEvent = (v: (argument: string) => string) => (event: Event) => {
       const target = event.target as HTMLInputElement;
-      Validator.setValidator(target, validator);
+      Validator.setValidator(target, v);
     };
 
     this.children.title = new Title({ title: 'Sign In' });

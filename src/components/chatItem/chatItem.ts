@@ -9,7 +9,7 @@ type Props = {
   unread?: number;
 }
 
-export default class ChatItem extends Block {
+export default class ChatItem extends Block<Props> {
   // eslint-disable-next-line no-useless-constructor
   constructor(props?: Props) {
     super(props);

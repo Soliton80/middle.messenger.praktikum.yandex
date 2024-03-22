@@ -3,14 +3,7 @@ import Button from '../../components/button/button';
 import Title from '../../components/title/title';
 import Field from '../../components/field/field';
 import signUpForm from './signUpForm.pug';
-import {
-  setValidator,
-  validateEmail,
-  validateLogin,
-  validateName,
-  validatePhone,
-  validatePassword,
-} from '../../utils/validators';
+import Validator from '../../utils/validators';
 
 type Props = {
   title: string,
@@ -23,12 +16,10 @@ export default class SignupForm extends Block {
   }
 
   protected initChildren(): void {
-
-    const handleEvent = (validator: (argument: string) => string) => (event: Event) => {
+    const handleEvent = (v: (argument: string) => string) => (event: Event) => {
       const target = event.target as HTMLInputElement;
-      setValidator(target, validator);
+      Validator.setValidator(target, v);
     };
-
 
     this.children.title = new Title({ title: 'Sign Up' });
     this.children.fields = [
@@ -37,8 +28,8 @@ export default class SignupForm extends Block {
         autocomplete: 'email',
         placeholder: 'kirill@sukharev.ru',
         events: {
-          blur: handleEvent(validateEmail),
-          click: handleEvent(validateEmail),
+          blur: handleEvent(Validator.validateEmail),
+          click: handleEvent(Validator.validateEmail),
         },
       },
       {
@@ -46,8 +37,8 @@ export default class SignupForm extends Block {
         autocomplete: 'username',
         placeholder: 'username',
         events: {
-          blur: handleEvent(validateLogin),
-          click: handleEvent(validateLogin),
+          blur: handleEvent(Validator.validateLogin),
+          click: handleEvent(Validator.validateLogin),
         },
       },
       {
@@ -55,8 +46,8 @@ export default class SignupForm extends Block {
         autocomplete: 'name',
         placeholder: 'Vanya',
         events: {
-          blur: handleEvent(validateName),
-          click: handleEvent(validateName),
+          blur: handleEvent(Validator.validateName),
+          click: handleEvent(Validator.validateName),
         },
       },
       {
@@ -64,8 +55,8 @@ export default class SignupForm extends Block {
         autocomplete: 'family-name',
         placeholder: 'Ivanov',
         events: {
-          blur: handleEvent(validateName),
-          click: handleEvent(validateName),
+          blur: handleEvent(Validator.validateName),
+          click: handleEvent(Validator.validateName),
         },
       },
       {
@@ -73,8 +64,8 @@ export default class SignupForm extends Block {
         autocomplete: 'tel',
         placeholder: '+7 (777) 777 77 77',
         events: {
-          blur: handleEvent(validatePhone),
-          click: handleEvent(validatePhone),
+          blur: handleEvent(Validator.validatePhone),
+          click: handleEvent(Validator.validatePhone),
         },
       },
       {
@@ -83,8 +74,8 @@ export default class SignupForm extends Block {
         type: 'password',
         classInput: 'input-text password-mask',
         events: {
-          blur: handleEvent(validatePassword),
-          click: handleEvent(validatePassword),
+          blur: handleEvent(Validator.validatePassword),
+          click: handleEvent(Validator.validatePassword),
         },
       },
       {
@@ -93,13 +84,12 @@ export default class SignupForm extends Block {
         type: 'password',
         classInput: 'input-text password-mask',
         events: {
-          blur: handleEvent(validatePassword),
-          click: handleEvent(validatePassword),
+          blur: handleEvent(Validator.validatePassword),
+          click: handleEvent(Validator.validatePassword),
         },
       },
     ].map((field) => new Field(field));
     this.children.button = new Button({ label: 'Sign Up' });
-
   }
 
   render() {

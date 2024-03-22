@@ -7,7 +7,7 @@ type Props = {
   class_author?: string;
 }
 
-export default class MessageItem extends Block {
+export default class MessageItem extends Block<Props> {
   // eslint-disable-next-line no-useless-constructor
   constructor(props?: Props) {
     super(props);

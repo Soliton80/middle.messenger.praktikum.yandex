@@ -8,18 +8,22 @@ class Validator {
     events: string[] = ['blur', 'click'],
   ): void {
     let errorMessage = '';
-    let errorElement = new ErrorMessage(inputElement).element;
+    const errorElement = new ErrorMessage(inputElement).element;
 
     events.forEach((event) => {
       inputElement.addEventListener(event, () => {
         errorMessage = myValidator(inputElement.value);
         if (errorMessage) {
           inputElement.style.borderColor = 'var(--red-color)';
-          errorElement.textContent = errorMessage;
+          if (errorElement) {
+            errorElement.textContent = errorMessage;
+          }
         } else {
           inputElement.style.borderColor = 'var(--primary-color)';
-          errorElement.textContent = '';
-          console.log(inputElement.value)
+          if (errorElement) {
+            errorElement.textContent = '';
+          }
+          console.log(inputElement.value);
         }
       });
     });
